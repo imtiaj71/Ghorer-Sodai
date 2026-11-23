@@ -1,0 +1,26 @@
+Features
+Sticky header, search bar, cart counter, and mobile-friendly navigation
+
+“Fresh - Affordable - Reliable” hero section
+
+USP cards highlighting fast delivery, fresh products, and payment/return policies
+
+Categories for vegetables, fruits, fish & meat, rice & lentils, spices, and household essentials
+
+Product cards with discount labels and functional “Add to Bag” buttons
+
+Weekly offers, delivery information, newsletter section, and footer
+
+Green and off-white color palette: #123524, #1f6b3f, #e4f2e6, #f7f6ef
+
+Customization Guide
+To change the name: Update the <title> tag and the “ঘরের সদাই” (Ghorer Sodai) text within the .logo class
+
+To change colors: Modify the :root variables in the CSS
+
+To add products: Copy and paste a new <article class="product"> block inside the .products container
+
+To change images: Replace the link in each <img src="..."> attribute with the URL of your own image
+
+This file is a static landing page; it runs without the need for a server, database, or build tool.
+

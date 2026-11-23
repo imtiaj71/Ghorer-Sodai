@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ঘরের সদাই | অনলাইন গ্রোসারি শপিং</title>
+<meta name="description" content="ঘরের সদাই — মানসম্মত মুদি, তাজা সবজি, ফল, বাজার ও ঘরোয়া প্রয়োজনীয় পণ্যের অনলাইন শপ।" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-900:#123524;
+  --green-800:#184a30;
+  --green-700:#1f6b3f;
+  --green-600:#2f8f4e;
+  --green-500:#3fa565;
+  --green-100:#e4f2e6;
+  --off-white:#f7f6ef;
+  --card:#ffffff;
+  --ink:#17251d;
+  --muted:#5c6b60;
+  --amber:#e8a33d;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(18,53,36,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Hind Siliguri","Inter",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--off-white);
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+.topbar{
+  background:var(--green-900);
+  color:#eaf5ec;
+  font-size:.86rem;
+}
+.topbar .container{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:9px 0;
+}
+.topbar span{opacity:.85}
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,246,239,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #e2e6da;
+}
+.header .container{
+  display:flex;align-items:center;gap:18px;
+  padding:14px 0;
+}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.35rem;color:var(--green-800)}
+.logo-mark{
+  width:42px;height:42px;border-radius:13px;
+  background:linear-gradient(135deg,var(--green-600),var(--green-800));
+  color:#fff;display:grid;place-items:center;font-size:1.3rem;
+}
+.nav{display:flex;gap:22px;margin-left:8px;font-weight:600;color:var(--muted)}
+.nav a:hover{color:var(--green-700)}
+.header-actions{margin-left:auto;display:flex;align-items:center;gap:10px}
+.search{
+  display:flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid #dfe5d7;border-radius:999px;
+  padding:9px 15px;min-width:260px;
+}
+.search input{border:0;outline:0;background:transparent;width:100%;font:inherit;color:var(--ink)}
+.search input::placeholder{color:#8b9a8d}
+.icon-btn{
+  width:42px;height:42px;border-radius:12px;border:1px solid #dfe5d7;
+  background:#fff;display:grid;place-items:center;cursor:pointer;font-size:1.1rem;
+}
+.cart-btn{
+  position:relative;background:var(--green-700);color:#fff;border:0;
+  padding:11px 18px;border-radius:12px;font:inherit;font-weight:700;cursor:pointer;
+}
+.cart-count{
+  position:absolute;top:-7px;right:-7px;background:var(--amber);color:#fff;
+  width:23px;height:23px;border-radius:50%;font-size:.72rem;display:grid;place-items:center;
+}
+.hero{
+  background:
+    radial-gradient(circle at 85% 15%,rgba(63,165,101,.18),transparent 28%),
+    linear-gradient(120deg,#f3f7ee 0%,var(--off-white) 55%);
+  padding:58px 0 68px;
+  overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--green-100);color:var(--green-800);
+  padding:8px 15px;border-radius:999px;font-weight:700;font-size:.88rem;
+}
+.hero h1{
+  font-size:clamp(2.3rem,5vw,3.7rem);line-height:1.15;margin:18px 0;
+  color:var(--green-900);letter-spacing:-.5px;
+}
+.hero h1 em{font-style:normal;color:var(--green-600)}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:560px;margin:0 0 27px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;border:0;cursor:pointer;
+  padding:14px 25px;border-radius:999px;font:inherit;font-weight:700;
+  transition:.2s ease;
+}
+.btn-primary{background:var(--green-700);color:#fff;box-shadow:0 12px 25px rgba(31,107,63,.22)}
+.btn-primary:hover{background:var(--green-800);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--green-800);border:1.5px solid #b8c8b6}
+.btn-outline:hover{background:#fff}
+.hero-stats{display:flex;gap:34px;margin-top:38px;flex-wrap:wrap}
+.hero-stats strong{display:block;font-size:1.5rem;color:var(--green-800)}
+.hero-stats span{font-size:.88rem;color:var(--muted)}
+.hero-card{
+  background:#fff;border-radius:26px;padding:22px;box-shadow:var(--shadow);
+  border:1px solid #e7ebe0;
+}
+.hero-card img{border-radius:18px;height:330px;object-fit:cover}
+.hero-card .tag{
+  display:inline-block;margin-top:15px;background:var(--green-100);color:var(--green-800);
+  padding:6px 12px;border-radius:999px;font-weight:700;font-size:.82rem;
+}
+.hero-card h3{margin:10px 0 4px;font-size:1.15rem}
+.hero-card p{margin:0;color:var(--muted);font-size:.9rem}
+.usp{padding:26px 0 8px}
+.usp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.usp-card{
+  background:#fff;border:1px solid #e5e9dd;border-radius:var(--radius);
+  padding:20px;display:flex;gap:14px;align-items:center;
+}
+.usp-icon{
+  width:48px;height:48px;border-radius:14px;flex:0 0 auto;
+  background:var(--green-100);color:var(--green-800);
+  display:grid;place-items:center;font-size:1.35rem;
+}
+.usp-card h4{margin:0;font-size:1rem}
+.usp-card p{margin:2px 0 0;color:var(--muted);font-size:.86rem}
+.section{padding:64px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px}
+.section-head h2{margin:0;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--green-900)}
+.section-head p{margin:6px 0 0;color:var(--muted)}
+.link{color:var(--green-700);font-weight:700;white-space:nowrap}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.category{
+  background:#fff;border:1px solid #e5e9dd;border-radius:var(--radius);
+  padding:22px 12px;text-align:center;transition:.2s ease;
+}
+.category:hover{border-color:var(--green-500);transform:translateY(-4px);box-shadow:var(--shadow)}
+.category span{display:block;font-size:2rem;margin-bottom:8px}
+.category strong{font-size:.95rem}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product{
+  background:#fff;border:1px solid #e5e9dd;border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:.2s ease;
+}
+.product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.product-image{position:relative;background:var(--green-100)}
+.product-image img{height:190px;width:100%;object-fit:cover}
+.badge{
+  position:absolute;top:12px;left:12px;background:var(--green-700);color:#fff;
+  font-size:.73rem;font-weight:700;padding:5px 10px;border-radius:999px;
+}
+.badge.offer{background:var(--amber)}
+.product-body{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.product-body small{color:var(--green-600);font-weight:700}
+.product-body h3{margin:0;font-size:1.03rem;line-height:1.35}
+.price{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--green-800)}
+.old-price{color:#8b9a8d;font-weight:500;text-decoration:line-through;font-size:.9rem}
+.add-cart{
+  margin-top:auto;border:1.5px solid var(--green-700);background:transparent;color:var(--green-700);
+  padding:10px;border-radius:11px;font:inherit;font-weight:700;cursor:pointer;transition:.2s;
+}
+.add-cart:hover{background:var(--green-700);color:#fff}
+.offer-banner{
+  background:linear-gradient(110deg,var(--green-900),var(--green-700));
+  color:#fff;border-radius:26px;padding:44px;display:grid;
+  grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;
+}
+.offer-banner h2{font-size:clamp(1.7rem,3vw,2.4rem);margin:10px 0}
+.offer-banner p{color:#d8e8d9;margin:0}
+.offer-visual{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:20px;padding:22px;text-align:center;
+}
+.offer-visual strong{display:block;font-size:2.2rem}
+.delivery{
+  display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;
+  background:#fff;border:1px solid #e5e9dd;border-radius:26px;padding:36px;
+}
+.delivery ul{list-style:none;margin:18px 0 0;padding:0}
+.delivery li{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;color:var(--muted)}
+.delivery li::before{content:"✓";color:var(--green-600);font-weight:800}
+.newsletter{
+  background:var(--green-100);border-radius:26px;padding:44px;text-align:center;
+}
+.newsletter h2{margin:0 0 8px;color:var(--green-900)}
+.newsletter p{color:var(--muted);margin:0 0 22px}
+.newsletter form{display:flex;gap:10px;max-width:520px;margin:auto}
+.newsletter input{
+  flex:1;border:1px solid #c9d8c9;border-radius:999px;padding:14px 20px;
+  font:inherit;background:#fff;outline:none;
+}
+.footer{background:var(--green-900);color:#d7e6d9;margin-top:64px}
+.footer-grid{
+  display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;
+  padding:54px 0 34px;
+}
+.footer h4{color:#fff;margin:0 0 14px}
+.footer a{display:block;margin-bottom:9px;font-size:.93rem;opacity:.82}
+.footer a:hover{opacity:1}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.14);padding:18px 0;
+  display:flex;justify-content:space-between;gap:12px;font-size:.85rem;flex-wrap:wrap;
+}
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translate(-50%,90px);
+  background:var(--green-800);color:#fff;padding:13px 22px;border-radius:999px;
+  font-weight:700;opacity:0;transition:.3s ease;z-index:100;box-shadow:var(--shadow);
+}
+.toast.show{transform:translate(-50%,0);opacity:1}
+@media(max-width:960px){
+  .hero-grid,.offer-banner,.delivery{grid-template-columns:1fr}
+  .usp-grid{grid-template-columns:repeat(2,1fr)}
+  .categories{grid-template-columns:repeat(3,1fr)}
+  .products{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .nav{display:none}
+}
+@media(max-width:620px){
+  .topbar .container{justify-content:center;text-align:center}
+  .search{min-width:0}
+  .header-actions .icon-btn:nth-child(2){display:none}
+  .hero{padding:38px 0 48px}
+  .hero-stats{gap:20px}
+  .categories{grid-template-columns:repeat(2,1fr)}
+  .products{grid-template-columns:1fr}
+  .offer-banner,.delivery,.newsletter{padding:26px}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>📞 হটলাইন: ১৬৪৬৯ | প্রতিদিন সকাল ৮টা–রাত ১০টা</span>
+    <span>🚚 ১,৫০০ টাকার বেশি অর্ডারে ফ্রি ডেলিভারি</span>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container">
+    <a class="logo" href="#">
+      <span class="logo-mark">🌿</span>
+      ঘরের সদাই
+    </a>
+    <nav class="nav">
+      <a href="#categories">ক্যাটাগরি</a>
+      <a href="#products">আজকের অফার</a>
+      <a href="#fresh">তাজা বাজার</a>
+      <a href="#delivery">ডেলিভারি</a>
+      <a href="#contact">যোগাযোগ</a>
+    </nav>
+    <div class="header-actions">
+      <label class="search">
+        <span>🔍</span>
+        <input type="search" placeholder="পণ্য খুঁজুন..." aria-label="পণ্য খুঁজুন" />
+      </label>
+      <button class="icon-btn" aria-label="অ্যাকাউন্ট">👤</button>
+      <button class="cart-btn" id="cartButton">
+        🛒 ব্যাগ
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="pill">🌿 তাজা • সাশ্রয়ী • নির্ভরযোগ্য</span>
+        <h1>ঘরের প্রতিদিনের <em>সদাই</em>, এখন হাতের নাগালে</h1>
+        <p>তাজা সবজি, ফল, মাছ-মাংস, চাল-ডাল, মসলা এবং ঘরোয়া প্রয়োজনীয় সব পণ্য কিনুন এক জায়গা থেকে। নির্ভরযোগ্য মান ও দ্রুত ডেলিভারির প্রতিশ্রুতি।</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#products">অর্ডার করুন</a>
+          <a class="btn btn-outline" href="#categories">ক্যাটাগরি দেখুন</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>১০,০০০+</strong><span>পণ্য</span></div>
+          <div><strong>৬০ মিনিট</strong><span>দ্রুত ডেলিভারি*</span></div>
+          <div><strong>২৪/৭</strong><span>কাস্টমার সাপোর্ট</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" alt="তাজা সবজি ও ফল">
+        <span class="tag">আজকের বাছাই</span>
+        <h3>তাজা সবজি ও ফলের বান্ডেল</h3>
+        <p>প্রতিদিনের রান্নার জন্য বাছাই করা মৌসুমি সবজি ও ফল।</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="usp">
+    <div class="container usp-grid">
+      <div class="usp-card"><span class="usp-icon">🚚</span><div><h4>দ্রুত ডেলিভারি</h4><p>নির্বাচিত এলাকায় দ্রুত ডেলিভারি</p></div></div>
+      <div class="usp-card"><span class="usp-icon">🌱</span><div><h4>তাজা পণ্য</h4><p>প্রতিদিন বাছাই করা মানসম্মত পণ্য</p></div></div>
+      <div class="usp-card"><span class="usp-icon">💳</span><div><h4>নমনীয় পেমেন্ট</h4><p>ক্যাশ, কার্ড ও মোবাইল ব্যাংকিং</p></div></div>
+      <div class="usp-card"><span class="usp-icon">↩️</span><div><h4>সহজ রিটার্ন</h4><p>নির্দিষ্ট শর্তে সহজ বিনিময় সুবিধা</p></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>কী কী পাবেন?</h2>
+          <p>ঘরের প্রতিদিনের প্রয়োজনীয় সব ক্যাটাগরি একসাথে।</p>
+        </div>
+        <a class="link" href="#">সব ক্যাটাগরি →</a>
+      </div>
+      <div class="categories">
+        <a class="category" href="#"><span>🥬</span><strong>সবজি</strong></a>
+        <a class="category" href="#"><span>🍎</span><strong>ফল</strong></a>
+        <a class="category" href="#"><span>🐟</span><strong>মাছ ও মাংস</strong></a>
+        <a class="category" href="#"><span>🌾</span><strong>চাল-ডাল</strong></a>
+        <a class="category" href="#"><span>🧂</span><strong>মসলা</strong></a>
+        <a class="category" href="#"><span>🧴</span><strong>ঘরোয়া পণ্য</strong></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>আজকের অফার</h2>
+          <p>সীমিত সময়ের জন্য বিশেষ ছাড়ে বাছাই করা পণ্য।</p>
+        </div>
+        <a class="link" href="#">আরও দেখুন →</a>
+      </div>
+      <div class="products">
+        <article class="product">
+          <div class="product-image">
+            <span class="badge offer">২০% ছাড়</span>
+            <img src="https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=800&q=80" alt="তাজা সবজি">
+          </div>
+          <div class="product-body">
+            <small>তাজা বাজার</small>
+            <h3>মিশ্র সবজি প্যাক — ২ কেজি</h3>
+            <div class="price">৳১৮০ <span class="old-price">৳২২৫</span></div>
+            <button class="add-cart">ব্যাগে যোগ করুন</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image">
+            <span class="badge">জনপ্রিয়</span>
+            <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=800&q=80" alt="তাজা ফল">
+          </div>
+          <div class="product-body">
+            <small>মৌসুমি ফল</small>
+            <h3>মিশ্র ফলের বাস্কেট</h3>
+            <div class="price">৳৪৫০</div>
+            <button class="add-cart">ব্যাগে যোগ করুন</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image">
+            <span class="badge offer">৳৩০ ছাড়</span>
+            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80" alt="চাল ও ডাল">
+          </div>
+          <div class="product-body">
+            <small>মুদি বাজার</small>
+            <h3>প্রিমিয়াম চাল — ৫ কেজি</h3>
+            <div class="price">৳৪২০ <span class="old-price">৳৪৫০</span></div>
+            <button class="add-cart">ব্যাগে যোগ করুন</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-image">
+            <span class="badge">নতুন</span>
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="মসলা">
+          </div>
+          <div class="product-body">
+            <small>রান্নাঘর</small>
+            <h3>দেশি মসলার কম্বো প্যাক</h3>
+            <div class="price">৳৩৫০</div>
+            <button class="add-cart">ব্যাগে যোগ করুন</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="fresh">
+    <div class="container">
+      <div class="offer-banner">
+        <div>
+          <span class="pill" style="background:rgba(255,255,255,.16);color:#fff">🔥 সাপ্তাহিক সেভিংস</span>
+          <h2>তাজা বাজারে প্রতিদিন সাশ্রয়</h2>
+          <p>সবজি, ফল, মাছ ও মাংসের নিয়মিত দৈনিক দরে ঘরে বসে অর্ডার করুন। নির্বাচিত পণ্যে বিশেষ ছাড় এবং ফ্রি ডেলিভারি সুবিধা পান।</p>
+          <div class="hero-actions" style="margin-top:24px">
+            <a class="btn btn-primary" href="#products">অফার দেখুন</a>
+          </div>
+        </div>
+        <div class="offer-visual">
+          <strong>৳১,৫০০+</strong>
+          <p>অর্ডারে ফ্রি ডেলিভারি</p>
+          <hr style="border:0;border-top:1px solid rgba(255,255,255,.25);margin:16px 0">
+          <strong>৬০ মিনিট</strong>
+          <p>নির্বাচিত এলাকায় দ্রুত ডেলিভারি</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="delivery">
+    <div class="container">
+      <div class="delivery">
+        <div>
+          <h2 style="margin:0 0 10px;color:var(--green-900)">সহজ অর্ডার, নিশ্চিন্ত ডেলিভারি</h2>
+          <p style="margin:0;color:var(--muted)">মাত্র কয়েক ধাপে আপনার প্রয়োজনীয় পণ্য অর্ডার করুন এবং নির্ধারিত সময়ে ঘরে পৌঁছে যাওয়ার সুবিধা নিন।</p>
+          <ul>
+            <li>পণ্য বাছাই করে ব্যাগে যোগ করুন</li>
+            <li>ঠিকানা ও ডেলিভারির সময় নির্বাচন করুন</li>
+            <li>অনলাইন বা ক্যাশ অন ডেলিভারিতে পেমেন্ট করুন</li>
+            <li>অর্ডার স্ট্যাটাস আপডেট পান</li>
+          </ul>
+          <a class="btn btn-primary" href="#" style="margin-top:18px">এখনই শুরু করুন</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1601598851547-4302969d0614?auto=format&fit=crop&w=900&q=80" alt="ডেলিভারি" style="border-radius:20px;height:320px;object-fit:cover">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="newsletter">
+        <h2>নতুন অফারের খবর পান</h2>
+        <p>ইমেইল দিন — সাপ্তাহিক ছাড়, নতুন পণ্য ও ডেলিভারি আপডেট পাবেন।</p>
+        <form onsubmit="event.preventDefault(); showToast('ধন্যবাদ! আপনার ইমেইল সংরক্ষিত হয়েছে।'); this.reset();">
+          <input type="email" required placeholder="আপনার ইমেইল লিখুন" aria-label="ইমেইল">
+          <button class="btn btn-primary" type="submit">সাবস্ক্রাইব</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="contact-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="logo" style="color:#fff">
+        <span class="logo-mark">🌿</span> ঘরের সদাই
+      </div>
+      <p style="margin-top:14px;opacity:.8">আপনার ঘরের প্রতিদিনের প্রয়োজনীয় পণ্যের বিশ্বস্ত অনলাইন ঠিকানা।</p>
+    </div>
+    <div>
+      <h4>ক্যাটাগরি</h4>
+      <a href="#">সবজি ও ফল</a>
+      <a href="#">মাছ ও মাংস</a>
+      <a href="#">মুদি বাজার</a>
+      <a href="#">ঘরোয়া পণ্য</a>
+    </div>
+    <div>
+      <h4>সহায়তা</h4>
+      <a href="#">অর্ডার ট্র্যাক</a>
+      <a href="#">রিটার্ন নীতি</a>
+      <a href="#">ডেলিভারি এলাকা</a>
+      <a href="#">যোগাযোগ</a>
+    </div>
+    <div>
+      <h4>যোগাযোগ</h4>
+      <a href="tel:16469">📞 ১৬৪৬৯</a>
+      <a href="mailto:hello@ghorershadai.com">✉️ hello@ghorershadai.com</a>
+      <a href="#">📍 ঢাকা, বাংলাদেশ</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© ২০২৬ ঘরের সদাই। সর্বস্বত্ব সংরক্ষিত।</span>
+    <span>শর্তাবলি • প্রাইভেসি পলিসি • রিফান্ড পলিসি</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast">ব্যাগে যোগ হয়েছে ✅</div>
+
+<script>
+const cartCount=document.getElementById('cartCount');
+const toast=document.getElementById('toast');
+let count=0,timer;
+document.querySelectorAll('.add-cart').forEach(button=>{
+  button.addEventListener('click',()=>{
+    count++;
+    cartCount.textContent=count;
+    toast.classList.add('show');
+    clearTimeout(timer);
+    timer=setTimeout(()=>toast.classList.remove('show'),1800);
+  });
+});
+document.getElementById('cartButton').addEventListener('click',()=>{
+  showToast(count?`আপনার ব্যাগে ${count}টি পণ্য আছে।`:'আপনার ব্যাগ এখন খালি।');
+});
+function showToast(message){
+  toast.textContent=message;
+  toast.classList.add('show');
+  clearTimeout(timer);
+  timer=setTimeout(()=>toast.classList.remove('show'),2200);
+}
+</script>
+</body>
+</html>
