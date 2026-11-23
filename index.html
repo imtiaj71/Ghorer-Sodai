@@ -195,6 +195,43 @@ img{max-width:100%;display:block}
 .delivery ul{list-style:none;margin:18px 0 0;padding:0}
 .delivery li{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;color:var(--muted)}
 .delivery li::before{content:"✓";color:var(--green-600);font-weight:800}
+
+/* Customer Reviews */
+.rating-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid #dfe5d7;border-radius:999px;
+  padding:8px 16px;font-weight:700;font-size:.92rem;color:var(--green-900);
+  white-space:nowrap;box-shadow:0 4px 14px rgba(18,53,36,.05);
+}
+.rating-pill .stars{color:var(--amber);letter-spacing:1px}
+.reviews-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.review-card{
+  background:var(--card);border:1px solid #e5e9dd;border-radius:var(--radius);
+  padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;
+  transition:.2s ease;
+}
+.review-card:hover{border-color:var(--green-500);transform:translateY(-3px);box-shadow:var(--shadow)}
+.review-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.review-stars{color:var(--amber);font-size:1rem;letter-spacing:1px}
+.review-item{
+  background:var(--green-100);color:var(--green-800);
+  font-size:.78rem;font-weight:700;padding:4px 10px;border-radius:999px;
+}
+.review-text{margin:0;color:var(--ink);font-size:.98rem}
+.reviewer{
+  display:flex;align-items:center;gap:12px;
+  padding-top:12px;border-top:1px solid #edf1e6;
+}
+.reviewer-avatar{
+  width:42px;height:42px;border-radius:50%;flex:0 0 auto;
+  background:var(--green-100);color:var(--green-800);
+  font-weight:800;display:grid;place-items:center;
+}
+.reviewer strong{display:block;font-size:.98rem;color:var(--green-900)}
+.reviewer small{display:block;color:var(--muted);font-size:.84rem}
+
 .newsletter{
   background:var(--green-100);border-radius:26px;padding:44px;text-align:center;
 }
@@ -227,7 +264,7 @@ img{max-width:100%;display:block}
   .hero-grid,.offer-banner,.delivery{grid-template-columns:1fr}
   .usp-grid{grid-template-columns:repeat(2,1fr)}
   .categories{grid-template-columns:repeat(3,1fr)}
-  .products{grid-template-columns:repeat(2,1fr)}
+  .products,.reviews-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:repeat(2,1fr)}
   .nav{display:none}
 }
@@ -237,8 +274,9 @@ img{max-width:100%;display:block}
   .header-actions .icon-btn:nth-child(2){display:none}
   .hero{padding:38px 0 48px}
   .hero-stats{gap:20px}
+  .section-head{flex-direction:column;align-items:flex-start}
   .categories{grid-template-columns:repeat(2,1fr)}
-  .products{grid-template-columns:1fr}
+  .products,.reviews-grid{grid-template-columns:1fr}
   .offer-banner,.delivery,.newsletter{padding:26px}
   .footer-grid{grid-template-columns:1fr}
 }
@@ -264,6 +302,7 @@ img{max-width:100%;display:block}
       <a href="#products">আজকের অফার</a>
       <a href="#fresh">তাজা বাজার</a>
       <a href="#delivery">ডেলিভারি</a>
+      <a href="#reviews">রিভিউ</a>
       <a href="#contact">যোগাযোগ</a>
     </nav>
     <div class="header-actions">
@@ -434,6 +473,126 @@ img{max-width:100%;display:block}
           <a class="btn btn-primary" href="#" style="margin-top:18px">এখনই শুরু করুন</a>
         </div>
         <img src="https://images.unsplash.com/photo-1601598851547-4302969d0614?auto=format&fit=crop&w=900&q=80" alt="ডেলিভারি" style="border-radius:20px;height:320px;object-fit:cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- কাস্টমার রিভিউ সেকশন -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>ক্রেতাদের রিভিউ</h2>
+          <p>নিয়মিত বাজার ও সদাই নিয়ে সন্তুষ্ট ক্রেতাদের কিছু বাস্তব অভিজ্ঞতা।</p>
+        </div>
+        <div class="rating-pill">
+          <span class="stars">★★★★★</span>
+          <span>৪.৯ / ৫ রেটিং · ২০০+ রিভিউ</span>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <article class="review-card">
+          <div>
+            <div class="review-top">
+              <div class="review-stars" aria-label="৫ তারকা রেটিং">★★★★★</div>
+              <span class="review-item">মিশ্র সবজি প্যাক</span>
+            </div>
+            <p class="review-text">“সবজিগুলো একদম তাজা ছিল, যেন সকালের কাঁচাবাজার থেকে সরাসরি এসেছে। এক ঘণ্টার মধ্যেই হাতে পেয়েছি।”[cite: 2]</p>
+          </div>
+          <div class="reviewer">
+            <div class="reviewer-avatar">স</div>
+            <div>
+              <strong>সাদিয়া আফরিন</strong>
+              <small>ধানমন্ডি, ঢাকা</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div>
+            <div class="review-top">
+              <div class="review-stars" aria-label="৫ তারকা রেটিং">★★★★★</div>
+              <span class="review-item">প্রিমিয়াম চাল</span>
+            </div>
+            <p class="review-text">“চালের মান খুব ভালো, ঝরঝরে ভাত হয়। প্যাকেজিংও বেশ পরিপাটি ছিল। নিয়মিত এখান থেকেই বাজার করি।”[cite: 2]</p>
+          </div>
+          <div class="reviewer">
+            <div class="reviewer-avatar">ক</div>
+            <div>
+              <strong>কামরুল হাসান</strong>
+              <small>উত্তরা, ঢাকা</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div>
+            <div class="review-top">
+              <div class="review-stars" aria-label="৫ তারকা রেটিং">★★★★★</div>
+              <span class="review-item">মিশ্র ফলের বাস্কেট</span>
+            </div>
+            <p class="review-text">“ফলগুলো মিষ্টি ও ফ্রেশ ছিল। বাচ্চাদের জন্য নিয়েছিলাম, সবাই খুব পছন্দ করেছে। দামও বেশ সাশ্রয়ী।”[cite: 2]</p>
+          </div>
+          <div class="reviewer">
+            <div class="reviewer-avatar">ত</div>
+            <div>
+              <strong>তাসনিম জাহান</strong>
+              <small>মিরপুর, ঢাকা</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div>
+            <div class="review-top">
+              <div class="review-stars" aria-label="৪.৫ তারকা রেটিং">★★★★☆</div>
+              <span class="review-item">দেশি মসলার কম্বো</span>
+            </div>
+            <p class="review-text">“মসলার ঘ্রাণ বেশ ভালো, ভেজাল মনে হয়নি। ডেলিভারি ম্যানও ভদ্র ছিলেন। ফ্রি ডেলিভারি অফারটা দারুণ।”[cite: 2]</p>
+          </div>
+          <div class="reviewer">
+            <div class="reviewer-avatar">ম</div>
+            <div>
+              <strong>মিজানুর রহমান</strong>
+              <small>নারায়ণগঞ্জ</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div>
+            <div class="review-top">
+              <div class="review-stars" aria-label="৫ তারকা রেটিং">★★★★★</div>
+              <span class="review-item">মাসিক মুদি সদাই</span>
+            </div>
+            <p class="review-text">“অফিস শেষে বাজারে যাওয়ার সময় পাই না। ঘরের সদাই থেকে অর্ডার করলে সময়মতো বাসায় পৌঁছে যায়।”[cite: 2]</p>
+          </div>
+          <div class="reviewer">
+            <div class="reviewer-avatar">ন</div>
+            <div>
+              <strong>নাবিলা চৌধুরী</strong>
+              <small>বনানী, ঢাকা</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div>
+            <div class="review-top">
+              <div class="review-stars" aria-label="৫ তারকা রেটিং">★★★★★</div>
+              <span class="review-item">ঘরোয়া পণ্য</span>
+            </div>
+            <p class="review-text">“অর্ডার করা প্রতিটি আইটেম ঠিকঠাকভাবে পেয়েছি। ক্যাশ অন ডেলিভারি থাকায় নিশ্চিন্তে কেনাকাটা করা যায়।”[cite: 2]</p>
+          </div>
+          <div class="reviewer">
+            <div class="reviewer-avatar">আ</div>
+            <div>
+              <strong>আরিফুল ইসলাম</strong>
+              <small>গাজীপুর</small>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
